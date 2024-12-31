@@ -11,14 +11,14 @@ public class testMaximum<T extends Comparable<T>> {
     public static void main(String[] args) {
         Integer[] a = {1, 2, 3, 4, 5};
 
-        new testMaximum<Integer>(a).findMax().ifPresentOrElse(
-                max -> System.out.println("Maximum Number: " + max),
-                () -> System.out.println("Array is Empty or NULL")
-        );
+        new testMaximum<Integer>(a).findMax();
     }
 
-    private Optional<T> findMax() {
-        return findMax(array);
+    private void findMax() {
+        findMax(array).ifPresentOrElse(
+                max -> System.out.println("Maximum Number: " + max),
+                () -> System.out.println("Array is Empty or NULL")
+        );;
     }
 
     private static<T extends Comparable<T>> Optional<T> findMax(T[] array) {
